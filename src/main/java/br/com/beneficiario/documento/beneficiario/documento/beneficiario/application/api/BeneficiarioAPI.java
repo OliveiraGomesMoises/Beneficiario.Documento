@@ -1,4 +1,4 @@
-package br.com.beneficiario.documento.beneficiario.documento.beneficiario.domain;
+package br.com.beneficiario.documento.beneficiario.documento.beneficiario.application.api;
 
 import br.com.beneficiario.documento.beneficiario.documento.beneficiario.application.api.BeneficiarioRequest;
 import br.com.beneficiario.documento.beneficiario.documento.beneficiario.application.api.BeneficiarioResponse;

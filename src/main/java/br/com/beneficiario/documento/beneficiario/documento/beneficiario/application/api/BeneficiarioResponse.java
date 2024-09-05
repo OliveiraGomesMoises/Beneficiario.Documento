@@ -2,6 +2,9 @@ package br.com.beneficiario.documento.beneficiario.documento.beneficiario.applic
 
 import lombok.Value;
 
+import java.util.UUID;
+
 @Value
 public class BeneficiarioResponse {
+    private UUID idBeneficiario;
 }
