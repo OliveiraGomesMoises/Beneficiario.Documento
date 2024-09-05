@@ -30,7 +30,6 @@ public class Beneficiario {
     private LocalDateTime dataAtualizacao;
 
     public Beneficiario(UUID idBeneficiario, String nomeCompleto, String telefone, LocalDate dataNascimento) {
-        this.idBeneficiario = idBeneficiario;
         this.nomeCompleto = nomeCompleto;
         this.telefone = telefone;
         this.dataNascimento = dataNascimento;
