@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.UUID;
 
 @Repository
 @Log4j2
@@ -32,8 +33,17 @@ public class BeneficiarioInfraRepository implements BeneficiarioRepository {
     @Override
     public List<Beneficiario> buscaTodosBeneficiario() {
         log.info("[inicia] BeneficiarioInfraRepository - buscaTodosBeneficiario");
-        List<Beneficiario> todosBeneficiario =  beneficiarioSpringDataJPARepository.findAll();
+        List<Beneficiario> todosBeneficiario = beneficiarioSpringDataJPARepository.findAll();
         log.info("[finaliza] BeneficiarioInfraRepository - buscaTodosBeneficiario");
         return todosBeneficiario;
+    }
+
+    @Override
+    public Beneficiario buscabeneficiarioAtravesDoId(UUID idBeneficiario) {
+        log.info("[inicia] BeneficiarioInfraRepository - buscabeneficiarioAtravesDoId");
+        Beneficiario beneficiario = beneficiarioSpringDataJPARepository.findById(idBeneficiario)
+                .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND,"beneficiario não encontrado!"));
+        log.info("[finaliza] BeneficiarioInfraRepository - buscabeneficiarioAtravesDoId");
+        return beneficiario;
     }
 }
