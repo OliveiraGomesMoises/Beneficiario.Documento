@@ -18,7 +18,7 @@ import java.util.UUID;
 public class Beneficiario {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(columnDefinition = "UUID", name = "idPet", updatable = false, unique = true, nullable = false)
+    @Column(columnDefinition = "UUID", name = "idBeneficiario", updatable = false, unique = true, nullable = false)
     private UUID idBeneficiario;
     @NotBlank
     private String nomeCompleto;
