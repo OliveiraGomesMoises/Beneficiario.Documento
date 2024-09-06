@@ -5,7 +5,9 @@ import lombok.Value;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Value
 public class BeneficiarioListResponse {
@@ -24,5 +26,12 @@ public class BeneficiarioListResponse {
         this.dataNascimento = beneficiario.getDataNascimento();
         this.dataInclusao = LocalDateTime.now();
         this.dataAtualizacao = LocalDateTime.now();
+    }
+
+    public static List<BeneficiarioListResponse> convert(List<Beneficiario> beneficiarios) {
+        return beneficiarios.stream()
+                .map(BeneficiarioListResponse::new)
+                .collect(Collectors
+                .toList());
     }
 }
