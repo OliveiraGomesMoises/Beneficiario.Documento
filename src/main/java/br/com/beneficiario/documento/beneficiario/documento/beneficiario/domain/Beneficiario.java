@@ -1,5 +1,6 @@
 package br.com.beneficiario.documento.beneficiario.documento.beneficiario.domain;
 
+import br.com.beneficiario.documento.beneficiario.documento.beneficiario.application.api.BeneficiarioRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -29,12 +30,15 @@ public class Beneficiario {
     private LocalDateTime dataInclusao;
     private LocalDateTime dataAtualizacao;
 
-    public Beneficiario(UUID idBeneficiario, String nomeCompleto, String telefone, LocalDate dataNascimento) {
-        this.nomeCompleto = nomeCompleto;
-        this.telefone = telefone;
-        this.dataNascimento = dataNascimento;
 
-        this.dataInclusao = LocalDateTime.now();
-        this.dataAtualizacao = LocalDateTime.now();
+    public Beneficiario(BeneficiarioRequest beneficiarioRequest) {
+        {
+            this.nomeCompleto = beneficiarioRequest.getNomeCompleto();
+            this.telefone = beneficiarioRequest.getTelefone();
+            this.dataNascimento = beneficiarioRequest.getDataNascimento();
+
+            this.dataInclusao = LocalDateTime.now();
+            this.dataAtualizacao = LocalDateTime.now();
+        }
     }
 }
