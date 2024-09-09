@@ -3,6 +3,5 @@ package br.com.beneficiario.documento.beneficiario.documento.documento.applicati
 import br.com.beneficiario.documento.beneficiario.documento.documento.domain.Documento;
 
 public interface DocumentoRepository {
-
     Documento salvaDocumento(Documento documento);
 }
