@@ -44,4 +44,11 @@ public class BeneficiarioApplicationService implements BeneficiarioService{
         log.info("[finaliza] BeneficiarioApplicationService - buscaBeneficiarioAtravesDoId");
         return new  BeneficiarioDetalhadoResponse(beneficiario);
     }
+
+    @Override
+    public void buscaBeneficiarioAtravesId(UUID idBeneficiario) {
+        log.info("[inicia] BeneficiarioApplicationService - buscaBeneficiarioAtravesId ");
+        beneficiarioRepository.buscaBeneficiarioAtravesId(idBeneficiario);
+        log.info("[finaliza] BeneficiarioApplicationService - buscaBeneficiarioAtravesId ");
+    }
 }

@@ -2,9 +2,10 @@ package br.com.beneficiario.documento.beneficiario.documento.documento.applicati
 
 import br.com.beneficiario.documento.beneficiario.documento.documento.application.api.DocumentoRequest;
 import br.com.beneficiario.documento.beneficiario.documento.documento.application.api.DocumentoRespose;
+import jakarta.validation.Valid;
 
 import java.util.UUID;
 
 public interface DocumentoService {
-    DocumentoRespose criaDoucmento(UUID idBeneficiario, DocumentoRequest documentoRequest);
+    DocumentoRespose criaDoucmento(UUID idBeneficiario ,@Valid DocumentoRequest documentoRequest);
 }
