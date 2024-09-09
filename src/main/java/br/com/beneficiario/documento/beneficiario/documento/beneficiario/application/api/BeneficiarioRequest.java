@@ -16,6 +16,5 @@ public class BeneficiarioRequest {
     @NotNull
     private LocalDate dataNascimento;
 
-    private LocalDateTime dataInclusao;
-    private LocalDateTime dataAtualizacao;
+
 }

@@ -16,7 +16,5 @@ public class DocumentoRequest {
     private TipoDocumento tipo;
     @NotBlank
     private String descricao;
-    @NotNull
-    private LocalDateTime dataInclusao;
-    private LocalDateTime dataAtualizacao;
+
 }
