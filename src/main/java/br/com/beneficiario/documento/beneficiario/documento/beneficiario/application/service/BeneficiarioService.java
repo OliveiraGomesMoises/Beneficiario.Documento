@@ -14,4 +14,6 @@ public interface BeneficiarioService {
     void buscaBeneficiarioAtravesId(UUID idBeneficiario);
 
     void alteraBeneficiario(UUID idBeneficiario, @Valid BeneficiarioAlteracaoRequest beneficiarioAlteracaoRequest);
+
+    void deletaBeneficiarioAtravesDoId(UUID idBeneficiario);
 }

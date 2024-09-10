@@ -58,4 +58,12 @@ public class BeneficiarioApplicationService implements BeneficiarioService {
         log.info("[finaliza] BeneficiarioApplicationService - alteraBeneficiario ");
 
     }
+
+    @Override
+    public void deletaBeneficiarioAtravesDoId(UUID idBeneficiario) {
+        log.info("[inicia] BeneficiarioApplicationService - deletaBeneficiarioAtravesDoId");
+        Beneficiario beneficiario = beneficiarioRepository.buscabeneficiarioAtravesDoId(idBeneficiario);
+        beneficiarioRepository.deletaBeneficiario(beneficiario);
+        log.info("[finaliza] BeneficiarioApplicationService - deletaBeneficiarioAtravesDoId");
+    }
 }
