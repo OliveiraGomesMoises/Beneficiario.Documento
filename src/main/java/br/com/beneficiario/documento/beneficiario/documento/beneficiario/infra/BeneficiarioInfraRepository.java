@@ -48,10 +48,11 @@ public class BeneficiarioInfraRepository implements BeneficiarioRepository {
     }
 
     @Override
-    public void buscaBeneficiarioAtravesId(UUID idBeneficiario) {
+    public Beneficiario buscaBeneficiarioAtravesId(UUID idBeneficiario) {
         log.info("[inicia] BeneficiarioInfraRepository - buscaBeneficiarioAtravesId");
         beneficiarioSpringDataJPARepository.findById(idBeneficiario);
         log.info("[finaliza] BeneficiarioInfraRepository - buscaBeneficiarioAtravesId");
 
+        return null;
     }
 }

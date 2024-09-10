@@ -1,6 +1,7 @@
 package br.com.beneficiario.documento.beneficiario.documento.beneficiario.application.api;
 
 import br.com.beneficiario.documento.beneficiario.documento.beneficiario.application.service.BeneficiarioService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,5 +38,13 @@ public class BeneficiarioController implements BeneficiarioAPI {
         BeneficiarioDetalhadoResponse beneficiarioDetalhado = beneficiarioService.buscaBeneficiarioAtravesDoId(idBeneficiario);
         log.info("[finaliza] BeneficiarioController - getBeneficiarioAtravesDoId");
         return beneficiarioDetalhado;
+    }
+
+    @Override
+    public void patchAlteraBeneficiario(UUID idBeneficiario,@Valid BeneficiarioAlteracaoRequest beneficiarioAlteracaoRequest) {
+        log.info("[inicia] BeneficiarioController - patchAlteraBeneficiario");
+        log.info("[idBeneficiario]{}", idBeneficiario);
+        beneficiarioService.alteraBeneficiario(idBeneficiario, beneficiarioAlteracaoRequest);
+        log.info("[finaliza] BeneficiarioController - patchAlteraBeneficiario");
     }
 }

@@ -22,6 +22,9 @@ public interface BeneficiarioAPI {
     @ResponseStatus(code = HttpStatus.OK)
     BeneficiarioDetalhadoResponse getBeneficiarioAtravesDoId(@PathVariable UUID idBeneficiario);
 
+    @PatchMapping(value = "/{idBeneficiario}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void patchAlteraBeneficiario(@PathVariable UUID idBeneficiario, @Valid @RequestBody BeneficiarioAlteracaoRequest beneficiarioAlteracaoRequest);
 
 }
 
