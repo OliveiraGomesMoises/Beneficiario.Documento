@@ -4,7 +4,6 @@ import br.com.beneficiario.documento.beneficiario.documento.documento.domain.Doc
 import br.com.beneficiario.documento.beneficiario.documento.documento.domain.TipoDocumento;
 import lombok.Value;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
