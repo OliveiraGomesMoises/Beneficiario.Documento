@@ -7,16 +7,27 @@ import lombok.Value;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
+
 @Value
 public class DocumentoBeneficiarioListResponse {
     private UUID idDocumento;
     private UUID idBeneficiario;
     private TipoDocumento tipo;
     private String descricao;
-    private LocalDateTime dataInclusao;
-    private LocalDateTime dataAtualizacao;
 
     public static List<DocumentoBeneficiarioListResponse> converte(List<Documento> documentosDoBeneficiario) {
-        return null;
+
+        return documentosDoBeneficiario.stream()
+                .map(DocumentoBeneficiarioListResponse::new)
+                .collect(Collectors
+                .toList());
+    }
+
+    public DocumentoBeneficiarioListResponse(Documento documento) {
+        this.idDocumento = documento.getIdDocumento();
+        this.idBeneficiario = documento.getIdBeneficiario();
+        this.tipo = documento.getTipo();
+        this.descricao = documento.getDescricao();
     }
 }
