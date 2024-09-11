@@ -1,6 +1,7 @@
 package br.com.beneficiario.documento.beneficiario.documento.documento.application.api;
 
 import br.com.beneficiario.documento.beneficiario.documento.documento.domain.TipoDocumento;
+import jakarta.persistence.Column;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.NotBlank;
